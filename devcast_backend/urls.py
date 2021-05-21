@@ -18,9 +18,18 @@ from django.urls import path
 
 
 from authentication.views import *
+from podcast.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('login/', login),
-    path('register/', register)
+    path('register/', register),
+
+    path('upload/', upload_podcast),
+    path('podcasts/',podcasts),
+    path('podcast-by-user/<str:user>/', get_podcasts_by_user),
+    path('delete-audio/<str:podcast_name>', delete_audio),
+
+    path('like/<str:podcast_name>', like),
+    path('unlike/<str:podcast_name>', unlike)
 ]
