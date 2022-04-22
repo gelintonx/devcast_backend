@@ -4,6 +4,7 @@ from authentication.models import User
 # Create your models here.
 
 class Follow(models.Model):
+      id = models.AutoField(primary_key=True)
       following = models.ForeignKey(User, on_delete=models.CASCADE, related_name="who_follows")
       follower = models.ForeignKey(User, on_delete=models.CASCADE, related_name="who_is_followed")
       follow_time = models.DateTimeField(auto_now=True)

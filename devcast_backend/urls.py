@@ -19,6 +19,7 @@ from django.urls import path
 
 from authentication.views import *
 from podcast.views import *
+from follow.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,5 +32,9 @@ urlpatterns = [
     path('delete-audio/<str:podcast_name>', delete_audio),
 
     path('like/<str:podcast_name>', like),
-    path('unlike/<str:podcast_name>', unlike)
+    path('unlike/<str:podcast_name>', unlike),
+
+    path('follow/<str:username>/',follow),
+    path('unfollow/<str:username>/',unfollow),
+    path('me/followers/',me_followers)
 ]
